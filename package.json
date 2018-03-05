@@ -2,6 +2,12 @@
   "name": "--libraryname--",
   "version": "0.0.0",
   "description": "",
+  "author": "--username-- <--usermail-->",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "keywords": [
     "typescript"
   ],
@@ -62,6 +68,12 @@
   "release": {
     "branch": "master"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "npm run commitlint"
+    }
+  },
   "lint-staged": {
     "{src,test}/**/*.ts": [
       "prettier --write",
@@ -99,12 +111,6 @@
       }
     },
     "collectCoverage": true
-  },
-  "author": "--username-- <--usermail-->",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": ""
   },
   "engines": {
     "node": ">=6.0.0"
