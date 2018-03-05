@@ -51,9 +51,7 @@
     "prompt": "1.0.0",
     "replace-in-file": "3.1.1",
     "rimraf": "2.6.2",
-    "rollup": "0.56.3",
-    "rollup-plugin-commonjs": "8.3.0",
-    "rollup-plugin-node-resolve": "3.0.3",
+    "rollup": "0.56.4",
     "rollup-plugin-sourcemaps": "0.4.2",
     "semantic-release": "12.4.1",
     "travis-deploy-once": "4.3.4",
@@ -62,7 +60,7 @@
     "tslint": "5.9.1",
     "tslint-config-prettier": "1.9.0",
     "tslint-config-standard": "7.0.0",
-    "typedoc": "0.10.0",
+    "typedoc": "0.11.0",
     "typescript": "2.7.2"
   },
   "release": {
@@ -81,7 +79,9 @@
     ]
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "config": {
     "commitizen": {
