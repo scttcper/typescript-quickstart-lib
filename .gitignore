@@ -1,0 +1,22 @@
+# Build/Dependencies
+node_modules
+dist
+.awcache
+/config/project.json
+docs
+
+# Misc
+*.log
+
+# OS Specific Files
+.DS_Store
+
+# Editor Configs
+.idea
+.vscode
+*.iml
+
+# Coverage
+.nyc_output
+coverage
+

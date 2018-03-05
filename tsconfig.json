@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "out/cjs"
+  },
+  "files": [
+    "./src/public_api"
+  ]
+}
