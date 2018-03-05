@@ -19,6 +19,7 @@
     "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
     "deploy-docs": "ts-node tools/gh-pages-publish",
     "commit": "git-cz",
+    "commitlint": "commitlint -e $GIT_PARAMS",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "cd dist && semantic-release"
   },
