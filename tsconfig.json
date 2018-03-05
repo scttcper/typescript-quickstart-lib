@@ -1,7 +1,17 @@
 {
-  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "out/cjs"
+    "declaration": true,
+    "importHelpers": true,
+    "lib": ["es2017"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "strict": true,
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": ["../node_modules/@types"],
+    "outDir": "dist"
   },
   "files": [
     "./src/public_api"
