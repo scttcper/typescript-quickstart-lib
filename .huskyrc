@@ -1,7 +1,8 @@
 {
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run commitlint"
+      "pre-commit": "lint-staged && npm run commitlint",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
     }
   }
 }

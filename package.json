@@ -68,6 +68,9 @@
       "git add"
     ]
   },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
