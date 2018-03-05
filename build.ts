@@ -24,8 +24,9 @@ async function build() {
   // or write the bundle to disk
   await bundle.write(outputOptions);
 
-  // copy files to distribution folder
+  // copy git folder to dist folder for semantic-release
   copySync('.git', join(process.cwd(), 'dist/.git'));
+  // copy files to distribution folder
   copySync('package.json', join(process.cwd(), 'dist/package.json'));
   copySync('README.md', join(process.cwd(), 'dist/README.md'));
   copySync('LICENSE', join(process.cwd(), 'dist/LICENSE'));
