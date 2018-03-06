@@ -8,7 +8,15 @@ import * as fs from 'fs';
 
 const rmFiles = ['setup.ts'];
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts'];
-const setupPkg = ['@types/inquirer', '@types/lodash', 'lodash', '@types/shelljs', '@types/rimraf', 'inquirer', 'replace-in-file'];
+const setupPkg = [
+  '@types/inquirer',
+  '@types/lodash',
+  'lodash',
+  '@types/shelljs',
+  '@types/rimraf',
+  'inquirer',
+  'replace-in-file',
+];
 
 const dir = process.cwd();
 const packageFile = path.resolve(dir, 'package.json');
@@ -66,14 +74,14 @@ function finalize() {
   console.log('Finalizing');
 
   // Recreate Git folder
-  let gitInitOutput = exec('git init "' + path.resolve(__dirname, '..') + '"', {
+  let gitInitOutput = exec(`git init "${dirname}"`, {
     silent: true,
   }).stdout;
   console.log(gitInitOutput);
 
   // Remove post-install command
   let jsonPackage = path.resolve(__dirname, '..', 'package.json');
-  const pkg = JSON.parse(readFileSync(jsonPackage) as any);
+  const pkg = JSON.parse(fs.readFileSync(jsonPackage) as any);
 
   // Note: Add items to remove from the package file here
   delete pkg.scripts.postinstall;
@@ -81,11 +89,10 @@ function finalize() {
     delete pkg.devDependencies[dep];
   }
 
-  writeFileSync(jsonPackage, JSON.stringify(pkg, null, 2));
+  fs.writeFileSync(jsonPackage, JSON.stringify(pkg, null, 2));
   // console.log(Postinstall script has been removed'));
 
   console.log('\n');
 }
-
 
 setup().then(() => process.exit(0));
