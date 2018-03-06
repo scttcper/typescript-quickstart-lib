@@ -1,11 +1,10 @@
 import { join } from 'path';
 
 import { copySync } from 'fs-extra';
-import * as camelCase from 'lodash.camelcase';
 import { rollup, InputOptions, OutputOptions } from 'rollup';
 import * as sourceMaps from 'rollup-plugin-sourcemaps';
 
-const libraryName = 'library';
+const libraryName = '--camellibraryname--';
 
 const inputOptions: InputOptions = {
   input: `dist/esm/public_api.js`,
