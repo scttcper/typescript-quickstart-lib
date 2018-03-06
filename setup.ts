@@ -6,7 +6,6 @@ import * as replace from 'replace-in-file';
 import { exec } from 'shelljs';
 import * as fs from 'fs';
 
-const rmFiles = ['setup.ts'];
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts'];
 const setupPkg = [
   '@types/inquirer',
@@ -82,6 +81,7 @@ function finalize() {
   }
 
   fs.writeFileSync(packageFile, JSON.stringify(pkg, null, 2));
+  rimraf.sync(path.join(dirname, 'setup.ts'));
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
