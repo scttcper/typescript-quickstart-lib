@@ -57,7 +57,7 @@ function modifyContents(libraryName: string, username: string, email: string) {
     const changes = replace.sync({
       files,
       from: [/--libraryname--/g, /--camellibraryname--/g, /--username--/g, /--email--/g],
-      to: [libraryName, _.camelCase(name), username, email],
+      to: [libraryName, _.camelCase(libraryName), username, email],
     });
     console.log(modifyFiles.join('\n'));
   } catch (error) {
