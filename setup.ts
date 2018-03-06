@@ -86,4 +86,9 @@ function finalize() {
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
-// setup().then(() => process.exit(0)).catch((err) => { console.error(err) process.exit(1));
+setup()
+  .then(() => process.exit(0))
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
