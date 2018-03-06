@@ -28,7 +28,7 @@
     "commitlint": "commitlint -e $GIT_PARAMS",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "cd dist && semantic-release",
-    "postinstall": "ts-node setup.ts"
+    "postinstall": "ts-node setup.ts && npm install"
   },
   "dependencies": {
     "tslib": "^1.9.0"
@@ -43,7 +43,6 @@
     "@types/node": "9.4.6",
     "@types/rimraf": "^2.0.2",
     "@types/shelljs": "^0.7.8",
-    "colors": "1.1.2",
     "commitizen": "2.9.6",
     "cross-env": "5.1.3",
     "cz-conventional-changelog": "2.1.0",
@@ -53,7 +52,6 @@
     "jest": "22.4.2",
     "lint-staged": "7.0.0",
     "lodash": "^4.17.5",
-    "lodash.camelcase": "4.3.0",
     "prettier": "1.11.1",
     "prompt": "1.0.0",
     "replace-in-file": "3.1.1",
