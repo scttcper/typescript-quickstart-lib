@@ -30,7 +30,6 @@ async function setup() {
   // Get the Git username and email before the .git directory is removed
   const username = exec('git config user.name').stdout.trim();
   const email = exec('git config user.email').stdout.trim();
-  rimraf.sync('.git');
   modifyContents(name, username, email);
   finalize();
 }
@@ -50,8 +49,6 @@ async function confirmName() {
  * Updates the contents of the template files with the library name or user details
  */
 function modifyContents(libraryName: string, username: string, email: string) {
-  console.log('Modified');
-
   let files = modifyFiles.map(f => path.resolve(__dirname, '..', f));
   try {
     const changes = replace.sync({
@@ -59,21 +56,18 @@ function modifyContents(libraryName: string, username: string, email: string) {
       from: [/--libraryname--/g, /--camellibraryname--/g, /--username--/g, /--email--/g],
       to: [libraryName, _.camelCase(libraryName), username, email],
     });
-    console.log(modifyFiles.join('\n'));
   } catch (error) {
     console.error('An error occurred modifying the file: ', error);
   }
-
-  console.log('\n');
 }
 
 /**
  * Calls any external programs to finish setting up the library
  */
 function finalize() {
-  console.log('Finalizing');
-
   // Recreate Git folder
+  console.log('Removing .git folder');
+  rimraf.sync('.git');
   let gitInitOutput = exec(`git init "${dirname}"`, {
     silent: true,
   }).stdout;
@@ -89,9 +83,7 @@ function finalize() {
   }
 
   fs.writeFileSync(packageFile, JSON.stringify(pkg, null, 2));
-  // console.log(Postinstall script has been removed'));
-
-  console.log('\n');
+  console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
-setup().then(() => process.exit(0));
+setup().then(() => process.exit(0)).catch((err) => { console.error(err); process.exit(1));
