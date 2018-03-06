@@ -49,7 +49,7 @@ async function confirmName() {
  * Updates the contents of the template files with the library name or user details
  */
 function modifyContents(libraryName: string, username: string, email: string) {
-  let files = modifyFiles.map(f => path.resolve(__dirname, '..', f));
+  const files = modifyFiles.map(f => path.join(dirname, f));
   try {
     const changes = replace.sync({
       files,
@@ -68,7 +68,7 @@ function finalize() {
   // Recreate Git folder
   console.log('Removing .git folder');
   rimraf.sync('.git');
-  let gitInitOutput = exec(`git init "${dirname}"`, {
+  const gitInitOutput = exec(`git init "${dirname}"`, {
     silent: true,
   }).stdout;
   console.log(gitInitOutput);
@@ -76,7 +76,6 @@ function finalize() {
   // Remove post-install command
   const pkg = JSON.parse(fs.readFileSync(packageFile) as any);
 
-  // Note: Add items to remove from the package file here
   delete pkg.scripts.postinstall;
   for (const dep of setupPkg) {
     delete pkg.devDependencies[dep];
