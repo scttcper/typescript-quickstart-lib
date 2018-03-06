@@ -80,8 +80,7 @@ function finalize() {
   console.log(gitInitOutput);
 
   // Remove post-install command
-  let jsonPackage = path.resolve(__dirname, '..', 'package.json');
-  const pkg = JSON.parse(fs.readFileSync(jsonPackage) as any);
+  const pkg = JSON.parse(fs.readFileSync(packageFile) as any);
 
   // Note: Add items to remove from the package file here
   delete pkg.scripts.postinstall;
@@ -89,7 +88,7 @@ function finalize() {
     delete pkg.devDependencies[dep];
   }
 
-  fs.writeFileSync(jsonPackage, JSON.stringify(pkg, null, 2));
+  fs.writeFileSync(packageFile, JSON.stringify(pkg, null, 2));
   // console.log(Postinstall script has been removed'));
 
   console.log('\n');
