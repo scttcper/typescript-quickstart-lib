@@ -6,14 +6,18 @@ import * as replace from 'replace-in-file';
 import { exec } from 'shelljs';
 import * as fs from 'fs';
 
+if (process.env.TRAVIS) {
+  process.exit(0);
+}
+
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts'];
 const setupPkg = [
   '@types/inquirer',
   '@types/lodash',
-  'lodash',
-  '@types/shelljs',
   '@types/rimraf',
+  '@types/shelljs',
   'inquirer',
+  'lodash',
   'replace-in-file',
 ];
 
