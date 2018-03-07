@@ -11,14 +11,14 @@
   "keywords": [
     "typescript"
   ],
-  "main": "./cjs/index.umd.js",
-  "module": "./esm/index.es5.js",
-  "typings": "./esm/index.d.ts",
+  "main": "./bundles/--camellibraryname--.umd.js",
+  "module": "./bundles/--camellibraryname--.es5.js",
+  "typings": "./public_api.d.ts",
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "lint-staged": "lint-staged",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json && ts-node build",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json && tsc -p tsconfig.umd.json && ts-node build",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -26,7 +26,7 @@
     "commit": "git-cz",
     "commitlint": "commitlint -e $GIT_PARAMS",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "cd dist && semantic-release",
+    "semantic-release": "cd dist/package-dist && semantic-release",
     "postinstall": "ts-node setup.ts && npm install --ignore-scripts"
   },
   "dependencies": {

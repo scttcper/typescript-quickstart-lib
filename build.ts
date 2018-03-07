@@ -4,36 +4,49 @@ import { copySync } from 'fs-extra';
 import { rollup, InputOptions, OutputOptions } from 'rollup';
 import * as sourceMaps from 'rollup-plugin-sourcemaps';
 
-const libraryName = '--camellibraryname--';
-
-const inputOptions: InputOptions = {
-  input: `dist/esm/public_api.js`,
+const umdInputOptions: InputOptions = {
+  input: `dist/umd/public_api.js`,
+  external: ['tslib'],
   plugins: [sourceMaps()],
 };
-const outputOptions: OutputOptions = {
-  file: `./dist/bundles/${libraryName}.umd.js`,
-  name: libraryName,
+const umdOutputOptions: OutputOptions = {
+  file: './dist/package-dist/bundles/--libraryname--.umd.js',
+  name: '--camellibraryname--',
   format: 'umd',
+  globals: {
+    tslib: 'tslib',
+  },
   sourcemap: true,
+};
+const moduleInputOptions: InputOptions = {
+  input: `dist/esm5/public_api.js`,
+  external: ['tslib'],
+  plugins: [sourceMaps()],
+};
+const moduleOutputOptions: OutputOptions = {
+  ...umdOutputOptions,
+  file: './dist/package-dist/bundles/--libraryname--.esm5.js',
+  format: 'es',
 };
 
 async function build() {
-  // create a bundle
-  const bundle = await rollup(inputOptions);
-  // or write the bundle to disk
-  await bundle.write(outputOptions);
+  // create bundles
+  const umd = await rollup(umdInputOptions);
+  await umd.write(umdOutputOptions);
+  const mod = await rollup(moduleInputOptions);
+  await mod.write(moduleOutputOptions);
 
   // copy git folder to dist folder for semantic-release
-  copySync('.git', join(process.cwd(), 'dist/.git'));
+  copySync('.git', join(process.cwd(), 'dist/packages-dist/.git'));
   // copy files to distribution folder
-  copySync('package.json', join(process.cwd(), 'dist/package.json'));
-  copySync('README.md', join(process.cwd(), 'dist/README.md'));
-  copySync('LICENSE', join(process.cwd(), 'dist/LICENSE'));
+  copySync('package.json', join(process.cwd(), 'dist/package-dist/package.json'));
+  copySync('README.md', join(process.cwd(), 'dist/package-dist/README.md'));
+  copySync('LICENSE', join(process.cwd(), 'dist/package-dist/LICENSE'));
 }
 
 build()
   .then(() => console.log('build success'))
-  .catch((e) => {
+  .catch(e => {
     console.error(e);
     process.exit(1);
   });
