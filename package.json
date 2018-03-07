@@ -29,7 +29,7 @@
     "commitlint": "commitlint -e $GIT_PARAMS",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "cd dist && semantic-release",
-    "postinstall": "ts-node setup.ts && npm install"
+    "postinstall": "ts-node setup.ts && npm install --ignore-scripts"
   },
   "dependencies": {
     "tslib": "^1.9.0"
