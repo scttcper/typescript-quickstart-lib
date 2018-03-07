@@ -6,10 +6,6 @@ import * as replace from 'replace-in-file';
 import { exec } from 'shelljs';
 import * as fs from 'fs';
 
-if (process.env.TRAVIS) {
-  process.exit(0);
-}
-
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts'];
 const setupPkg = [
   '@types/inquirer',
@@ -89,9 +85,13 @@ function finalize() {
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
-setup()
-  .then(() => process.exit(0))
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+if (process.env.TRAVIS) {
+  process.exit(0);
+} else {
+  setup()
+    .then(() => process.exit(0))
+    .catch(err => {
+      console.error(err);
+      process.exit(1);
+    });
+}
