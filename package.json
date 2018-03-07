@@ -20,11 +20,9 @@
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json && ts-node build",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
-    "start": "rollup -c rollup.config.ts -w",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
+    "test:prod": "npm run test -- --coverage --no-cache",
     "commit": "git-cz",
     "commitlint": "commitlint -e $GIT_PARAMS",
     "travis-deploy-once": "travis-deploy-once",
@@ -32,7 +30,7 @@
     "postinstall": "ts-node setup.ts && npm install --ignore-scripts"
   },
   "dependencies": {
-    "tslib": "^1.9.0"
+    "tslib": "^1.7.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.1.3",
