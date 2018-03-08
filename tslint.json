@@ -4,7 +4,7 @@
     "tslint-config-prettier"
   ],
   "rules": {
-    "semicolon": true,
+    "semicolon": [true, "always"],
     "prefer-const": true
   }
 }
