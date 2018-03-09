@@ -7,6 +7,7 @@ A fork of [typescript-library-starter](https://github.com/alexjoverm/typescript-
 * always semicolons instead of no semicolons
 * compiled to es5 using plain TypeScript instead of rollup (rollup is still used for bundles)
 * tslib is used as a polyfill instead of core.js
+* shorter library imports
 
 ## Use
 
@@ -23,7 +24,6 @@ npm install
 * Zero Setup
 * Jest test running
 * publishes for every platform http://2ality.com/2017/04/setting-up-multi-platform-packages.html
-* allows importing from single files of project `import { DummyClass } from 'mylibrary/index'`
 * typescript type publishing `d.ts`
 * **[Prettier](https://github.com/prettier/prettier)** and **[TSLint](https://palantir.github.io/tslint/)** for code formatting and consistency
 * Docs generation using **[TypeDoc](http://typedoc.org/)**
@@ -53,3 +53,17 @@ Add project to codecov https://codecov.io/gh
 * `npm run build:docs`: builds docs
 * `npm run lint`: Lints code
 * `npm run commit`: Commit using conventional commit style ([husky](https://github.com/typicode/husky) will walk you through commit message format)
+
+### Importing library
+
+You can import the public_api using
+
+```ts
+import { something } from 'mylib';
+```
+
+Import from a single file in the `src` directory.
+
+```ts
+import { yourClass } from 'mylib/srcFile';
+```
