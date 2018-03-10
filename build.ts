@@ -13,6 +13,9 @@ const umdOutputOptions: OutputOptions = {
   file: './dist/package-dist/bundles/--libraryname--.umd.js',
   name: '--camellibraryname--',
   format: 'umd',
+  globals: {
+    tslib: 'tslib',
+  },
   sourcemap: true,
 };
 const moduleInputOptions: InputOptions = {
