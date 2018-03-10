@@ -13,9 +13,6 @@ const umdOutputOptions: OutputOptions = {
   file: './dist/package-dist/bundles/--libraryname--.umd.js',
   name: '--camellibraryname--',
   format: 'umd',
-  globals: {
-    tslib: 'tslib',
-  },
   sourcemap: true,
 };
 const moduleInputOptions: InputOptions = {
@@ -37,7 +34,7 @@ async function build() {
   await mod.write(moduleOutputOptions);
 
   // copy git folder to dist folder for semantic-release
-  copySync('.git', join(process.cwd(), 'dist/packages-dist/.git'));
+  copySync('.git', join(process.cwd(), 'dist/package-dist/.git'));
   // copy files to distribution folder
   copySync('package.json', join(process.cwd(), 'dist/package-dist/package.json'));
   copySync('README.md', join(process.cwd(), 'dist/package-dist/README.md'));
