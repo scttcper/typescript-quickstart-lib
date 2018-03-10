@@ -58,6 +58,7 @@
     "rollup": "^0.56.4",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "semantic-release": "^15.0.0",
+    "shelljs": "^0.8.1",
     "travis-deploy-once": "^4.3.4",
     "ts-jest": "^22.4.1",
     "ts-node": "^5.0.1",

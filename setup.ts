@@ -12,6 +12,7 @@ const setupPkg = [
   '@types/lodash',
   '@types/rimraf',
   '@types/shelljs',
+  'shelljs',
   'inquirer',
   'lodash',
   'replace-in-file',
