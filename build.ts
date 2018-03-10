@@ -19,9 +19,8 @@ const umdOutputOptions: OutputOptions = {
   sourcemap: true,
 };
 const moduleInputOptions: InputOptions = {
+  ...umdInputOptions,
   input: `dist/esm5/public_api.js`,
-  external: ['tslib'],
-  plugins: [sourceMaps()],
 };
 const moduleOutputOptions: OutputOptions = {
   ...umdOutputOptions,
