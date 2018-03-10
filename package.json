@@ -11,8 +11,8 @@
   "keywords": [
     "typescript"
   ],
-  "main": "./bundles/--camellibraryname--.umd.js",
-  "module": "./bundles/--camellibraryname--.es5.js",
+  "main": "./bundles/--libraryname--.umd.js",
+  "module": "./bundles/--libraryname--.es5.js",
   "typings": "./public_api.d.ts",
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
