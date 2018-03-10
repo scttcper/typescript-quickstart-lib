@@ -52,8 +52,14 @@ function modifyContents(libraryName: string, username: string, email: string) {
   try {
     const changes = replace.sync({
       files,
-      from: [/--libraryname--/g, /--camellibraryname--/g, /--username--/g, /--email--/g],
-      to: [libraryName, _.camelCase(libraryName), username, email],
+      from: [
+        /--libraryname--/g,
+        /--camellibraryname--/g,
+        /--username--/g,
+        /--email--/g,
+        /--master--/g,
+      ],
+      to: [libraryName, _.camelCase(libraryName), username, email, 'master'],
     });
   } catch (error) {
     console.error('An error occurred modifying the file: ', error);
