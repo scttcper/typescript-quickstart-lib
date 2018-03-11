@@ -12,7 +12,7 @@ A fork of [typescript-library-starter](https://github.com/alexjoverm/typescript-
 ## Use
 
 ```sh
-git clone https://github.com/TypeCtrl/typescript-quickstart-lib.git YOURFOLDERNAME
+git clone https://github.com/TypeCtrl/typescript-quickstart-lib.git --depth=1 YOURFOLDERNAME
 cd YOURFOLDERNAME
 
 # Run npm install and write your library name when asked. That's it!
