@@ -24,7 +24,7 @@ const moduleInputOptions: InputOptions = {
 };
 const moduleOutputOptions: OutputOptions = {
   ...umdOutputOptions,
-  file: './dist/package-dist/bundles/--libraryname--.esm5.js',
+  file: './dist/package-dist/bundles/--libraryname--.es2015.js',
   format: 'es',
 };
 

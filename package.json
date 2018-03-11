@@ -12,7 +12,7 @@
     "typescript"
   ],
   "main": "./bundles/--libraryname--.umd.js",
-  "module": "./bundles/--libraryname--.es5.js",
+  "module": "./bundles/--libraryname--.es2015.js",
   "typings": "./public_api.d.ts",
   "scripts": {
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
