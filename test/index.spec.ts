@@ -1,4 +1,4 @@
-import { DummyClass } from '../src';
+import { DummyClass } from '../src/index';
 
 describe('Dummy test', () => {
   it('should be instantiable', () => {
