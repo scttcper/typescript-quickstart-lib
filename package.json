@@ -15,8 +15,8 @@
   "module": "./bundles/--libraryname--.es2015.js",
   "typings": "./public_api.d.ts",
   "scripts": {
-    "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "lint:fix": "tslint -p tsconfig.json -t codeFrame --fix 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint -p tsconfig.json -t stylish 'src/**/*.ts' 'test/**/*.ts'",
+    "lint:fix": "tslint -p tsconfig.json -t stylish --fix 'src/**/*.ts' 'test/**/*.ts'",
     "lint-staged": "lint-staged",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json && tsc -p tsconfig.umd.json && ts-node ./build.ts",
