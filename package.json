@@ -11,15 +11,16 @@
   "keywords": [
     "typescript"
   ],
-  "main": "./bundles/--libraryname--.umd.js",
+  "main": "./public_api.js",
   "module": "./bundles/--libraryname--.es2015.js",
   "typings": "./public_api.d.ts",
+  "sideEffects": false,
   "scripts": {
     "lint": "tslint -p tsconfig.json -t stylish 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint -p tsconfig.json -t stylish --fix 'src/**/*.ts' 'test/**/*.ts'",
     "lint-staged": "lint-staged",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json && tsc -p tsconfig.umd.json && ts-node ./build.ts",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json && ts-node ./build.ts",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
     "test": "jest",
     "test:watch": "jest --watch",
