@@ -29,7 +29,7 @@ npm install
 * Docs generation using **[TypeDoc](http://typedoc.org/)**
 * [Semantic release](https://github.com/semantic-release/semantic-release) auto publishing
 * **[Travis](https://travis-ci.org)** integration and **[codecov](https://codecov.io)** coverage reporting
-* **Automatic releases and changelog**, using [Semantic release](https://github.com/semantic-release/semantic-release), [Commitizen](https://github.com/commitizen/cz-cli), [Conventional changelog](https://github.com/conventional-changelog/conventional-changelog) and [Husky](https://github.com/typicode/husky) (for the git hooks)
+* **Automatic releases and changelog**, using [Semantic release](https://github.com/semantic-release/semantic-release), [Commitizen](https://github.com/commitizen/cz-cli), [Conventional changelog](https://github.com/conventional-changelog/conventional-changelog)
 
 ## Additional Setup
 
@@ -52,7 +52,7 @@ Add project to codecov https://codecov.io/gh
 * `npm run build`: Generate bundles and typings
 * `npm run build:docs`: builds docs
 * `npm run lint`: Lints code
-* `npm run commit`: Commit using conventional commit style ([husky](https://github.com/typicode/husky) will walk you through commit message format)
+* `npm run commit`: Commit using conventional commit style
 
 ### Importing library
 
