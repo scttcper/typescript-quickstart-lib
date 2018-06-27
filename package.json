@@ -45,7 +45,7 @@
     "fs-extra": "^6.0.1",
     "inquirer": "^6.0.0",
     "jest": "^23.1.0",
-    "lodash": "^4.17.10",
+    "lodash": "4.17.10",
     "prettier": "^1.13.5",
     "replace-in-file": "^3.4.0",
     "rimraf": "^2.6.2",
