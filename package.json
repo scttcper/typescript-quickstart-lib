@@ -49,7 +49,7 @@
     "prettier": "1.14.0",
     "replace-in-file": "3.4.0",
     "rimraf": "2.6.2",
-    "rollup": "0.62.0",
+    "rollup": "0.63.5",
     "rollup-plugin-sourcemaps": "0.4.2",
     "semantic-release": "15.9.3",
     "shelljs": "0.8.2",
