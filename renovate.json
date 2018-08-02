@@ -1,6 +1,7 @@
 {
   "extends": [
-    "config:js-lib"
+    "config:js-lib",
+    "schedule:monthly"
   ],
   "automerge": "minor",
   "rebaseStalePrs": true,
