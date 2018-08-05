@@ -36,8 +36,8 @@
     "@types/fs-extra": "5.0.4",
     "@types/inquirer": "0.0.42",
     "@types/jest": "23.3.1",
-    "@types/lodash": "4.14.115",
-    "@types/node": "10.5.5",
+    "@types/lodash": "4.14.116",
+    "@types/node": "10.5.6",
     "@types/rimraf": "2.0.2",
     "@types/shelljs": "0.8.0",
     "commitizen": "2.10.1",
@@ -51,9 +51,9 @@
     "rimraf": "2.6.2",
     "rollup": "0.63.5",
     "rollup-plugin-sourcemaps": "0.4.2",
-    "semantic-release": "15.9.3",
+    "semantic-release": "15.9.5",
     "shelljs": "0.8.2",
-    "travis-deploy-once": "5.0.1",
+    "travis-deploy-once": "5.0.2",
     "ts-jest": "23.1.2",
     "ts-node": "7.0.0",
     "tslint": "5.11.0",
@@ -71,8 +71,9 @@
     }
   },
   "jest": {
+    "testURL": "http://localhost",
     "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      ".(ts|tsx)": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
@@ -80,18 +81,6 @@
       "tsx",
       "js"
     ],
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/test/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": -10
-      }
-    },
     "collectCoverage": true
   },
   "engines": {
