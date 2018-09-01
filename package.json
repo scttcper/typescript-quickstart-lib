@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "5.0.4",
-    "@types/inquirer": "0.0.42",
+    "@types/inquirer": "0.0.43",
     "@types/jest": "23.3.1",
     "@types/lodash": "4.14.116",
     "@types/node": "10.5.6",
