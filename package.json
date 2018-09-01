@@ -37,7 +37,7 @@
     "@types/inquirer": "0.0.43",
     "@types/jest": "23.3.1",
     "@types/lodash": "4.14.116",
-    "@types/node": "10.5.6",
+    "@types/node": "10.9.4",
     "@types/rimraf": "2.0.2",
     "@types/shelljs": "0.8.0",
     "commitizen": "2.10.1",
