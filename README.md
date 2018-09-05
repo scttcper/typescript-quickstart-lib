@@ -5,7 +5,7 @@ A fork of [typescript-library-starter](https://github.com/alexjoverm/typescript-
 * codecov instead of coveralls
 * commitlint instead of validate-commit-msg
 * always semicolons instead of no semicolons
-* compiled to es5 using plain TypeScript instead of rollup (rollup is still used for bundles)
+* compiled to cjs and module files using [microbundle](https://github.com/developit/microbundle)
 * tslib is used as a polyfill instead of core.js
 * shorter library imports
 

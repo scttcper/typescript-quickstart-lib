@@ -4,36 +4,36 @@
   "description": "",
   "author": "--username-- <--email-->",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
+  "repository": "",
   "keywords": [
     "typescript"
   ],
-  "main": "./public_api.js",
-  "module": "./bundles/--libraryname--.es2015.js",
-  "typings": "./public_api.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "source": "src/index.ts",
+  "main": "./dist/--libraryname--.js",
+  "module": "./dist/--libraryname--.m.js",
+  "typings": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "lint": "tslint -p tsconfig.json -t stylish 'src/**/*.ts' 'test/**/*.ts'",
     "lint:fix": "tslint -p tsconfig.json -t stylish --fix 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json && ts-node ./build.ts",
+    "build": "microbundle build --compress false --name=trueskill --format cjs,es --target node",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src && touch docs/.nojekyll",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:prod": "npm run test -- --coverage --no-cache",
     "commit": "git-cz",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "cd dist/package-dist && semantic-release",
+    "semantic-release": "cd dist && semantic-release",
     "postinstall": "ts-node setup.ts && npm install --ignore-scripts"
   },
   "dependencies": {
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@types/fs-extra": "5.0.4",
     "@types/inquirer": "0.0.43",
     "@types/jest": "23.3.1",
     "@types/lodash": "4.14.116",
@@ -42,25 +42,23 @@
     "@types/shelljs": "0.8.0",
     "commitizen": "2.10.1",
     "cz-conventional-changelog": "2.1.0",
-    "fs-extra": "7.0.0",
     "inquirer": "6.2.0",
     "jest": "23.5.0",
     "lodash": "4.17.10",
-    "prettier": "1.14.0",
-    "replace-in-file": "3.4.0",
+    "microbundle": "^0.6.0",
+    "prettier": "1.14.2",
+    "replace-in-file": "3.4.2",
     "rimraf": "2.6.2",
-    "rollup": "0.63.5",
-    "rollup-plugin-sourcemaps": "0.4.2",
-    "semantic-release": "15.9.5",
+    "semantic-release": "15.9.12",
     "shelljs": "0.8.2",
-    "travis-deploy-once": "5.0.2",
-    "ts-jest": "23.1.2",
-    "ts-node": "7.0.0",
+    "travis-deploy-once": "5.0.7",
+    "ts-jest": "23.1.4",
+    "ts-node": "7.0.1",
     "tslint": "5.11.0",
-    "tslint-config-prettier": "1.14.0",
-    "tslint-config-standard": "7.1.0",
-    "typedoc": "0.11.1",
-    "typescript": "3.0.1"
+    "tslint-config-prettier": "1.15.0",
+    "tslint-config-standard": "8.0.1",
+    "typedoc": "0.12.0",
+    "typescript": "3.0.3"
   },
   "release": {
     "branch": "--master--"
