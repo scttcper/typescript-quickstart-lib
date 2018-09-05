@@ -9,8 +9,5 @@
     "noImplicitAny": false,
     "noUnusedLocals": true,
     "sourceMap": true
-  },
-  "files": [
-    "./src/index.ts"
-  ]
+  }
 }

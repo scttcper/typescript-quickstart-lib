@@ -4,7 +4,7 @@ import * as _ from 'lodash';
 import * as rimraf from 'rimraf';
 import { exec } from 'shelljs';
 import * as fs from 'fs';
-const replace = require('replace-in-file');
+import replace from 'replace-in-file';
 
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts'];
 const setupPkg = [
@@ -35,13 +35,13 @@ async function setup() {
 }
 
 async function confirmName() {
-  const confirmName: Question = {
+  const confirm: Question = {
     type: 'input',
     name: 'name',
     message: 'library name',
     default: _.kebabCase(basename),
   };
-  const res = await prompt(confirmName);
+  const res = await prompt(confirm);
   return res.name;
 }
 
@@ -51,7 +51,7 @@ async function confirmName() {
 function modifyContents(libraryName: string, username: string, email: string) {
   const files = modifyFiles.map(f => path.join(dirname, f));
   try {
-    const changes = replace.sync({
+    replace.sync({
       files,
       from: [
         /--libraryname--/g,
@@ -83,6 +83,7 @@ function finalize() {
 
   delete pkg.scripts.postinstall;
   for (const dep of setupPkg) {
+    // tslint:disable-next-line:no-dynamic-delete
     delete pkg.devDependencies[dep];
   }
 
