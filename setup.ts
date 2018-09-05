@@ -2,9 +2,9 @@ import { prompt, Question } from 'inquirer';
 import * as path from 'path';
 import * as _ from 'lodash';
 import * as rimraf from 'rimraf';
-import * as replace from 'replace-in-file';
 import { exec } from 'shelljs';
 import * as fs from 'fs';
+const replace = require('replace-in-file');
 
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts'];
 const setupPkg = [
