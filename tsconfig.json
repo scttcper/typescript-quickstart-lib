@@ -8,9 +8,6 @@
     "noImplicitAny": false,
     "sourceMap": true
   },
-  "files": [
-    "./src/public_api"
-  ],
   "include": [
     "./src/**/*.ts",
     "./test/**/*.ts"
