@@ -8,9 +8,6 @@
   "keywords": [
     "typescript"
   ],
-  "files": [
-    "dist/*"
-  ],
   "source": "src/index.ts",
   "main": "./--libraryname--.js",
   "module": "./--libraryname--.m.js",
@@ -31,9 +28,7 @@
     "semantic-release": "cd dist && semantic-release",
     "postinstall": "ts-node -O '{\"module\": \"commonjs\"}' setup.ts && npm install --ignore-scripts"
   },
-  "dependencies": {
-    "tslib": "^1.9.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/inquirer": "0.0.43",
     "@types/jest": "23.3.1",
