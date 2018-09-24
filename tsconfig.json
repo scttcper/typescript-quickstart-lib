@@ -9,6 +9,7 @@
     "strict": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "dist"
   }
 }
