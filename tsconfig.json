@@ -5,6 +5,7 @@
     "lib": ["es2017"],
     "target": "es2015",
     "module": "es2015",
+    "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
