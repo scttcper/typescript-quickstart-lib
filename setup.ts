@@ -4,7 +4,7 @@ import * as _ from 'lodash';
 import * as rimraf from 'rimraf';
 import { exec } from 'shelljs';
 import * as fs from 'fs';
-import replace from 'replace-in-file';
+import * as replace from 'replace-in-file';
 
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts'];
 const setupPkg = [
