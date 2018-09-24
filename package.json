@@ -65,7 +65,8 @@
     }
   },
   "jest": {
-    "preset": "ts-jest"
+    "preset": "ts-jest",
+    "collectCoverage": true
   },
   "engines": {
     "node": ">=8.0.0"
