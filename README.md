@@ -29,7 +29,7 @@ npm install
 * Docs generation using **[TypeDoc](http://typedoc.org/)**
 * [Semantic release](https://github.com/semantic-release/semantic-release) auto publishing
 * **[Travis](https://travis-ci.org)** integration and **[codecov](https://codecov.io)** coverage reporting
-* **Automatic releases and changelog**, using [Semantic release](https://github.com/semantic-release/semantic-release), [Commitizen](https://github.com/commitizen/cz-cli), [Conventional changelog](https://github.com/conventional-changelog/conventional-changelog)
+* **Automatic releases and changelog**, using [Semantic release](https://github.com/semantic-release/semantic-release)
 
 ## Additional Setup
 
