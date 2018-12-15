@@ -23,7 +23,6 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --coverage --no-cache",
-    "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "cd dist && semantic-release",
     "postinstall": "ts-node -O '{\"module\": \"commonjs\"}' setup.ts && npm install --ignore-scripts"
   },
@@ -31,27 +30,26 @@
   "devDependencies": {
     "@types/inquirer": "0.0.43",
     "@types/jest": "23.3.10",
-    "@types/lodash": "4.14.118",
-    "@types/node": "10.12.11",
+    "@types/lodash": "4.14.119",
+    "@types/node": "10.12.15",
     "@types/rimraf": "2.0.2",
-    "@types/shelljs": "0.8.0",
-    "inquirer": "6.2.0",
+    "@types/shelljs": "0.8.1",
+    "inquirer": "6.2.1",
     "jest": "23.6.0",
     "lodash": "4.17.11",
-    "microbundle": "0.8.1",
+    "microbundle": "0.8.3",
     "prettier": "1.15.3",
     "replace-in-file": "3.4.2",
     "rimraf": "2.6.2",
-    "semantic-release": "15.12.1",
+    "semantic-release": "15.13.0",
     "shelljs": "0.8.3",
-    "travis-deploy-once": "5.0.9",
     "ts-jest": "23.10.5",
     "ts-node": "7.0.1",
     "tslint": "5.11.0",
-    "tslint-config-prettier": "1.16.0",
+    "tslint-config-prettier": "1.17.0",
     "tslint-xo": "0.10.0",
     "typedoc": "0.13.0",
-    "typescript": "3.1.6"
+    "typescript": "3.2.2"
   },
   "release": {
     "branch": "--master--"
