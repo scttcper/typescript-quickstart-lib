@@ -5,6 +5,8 @@
   ],
   "rules": {
     "semicolon": [true, "always"],
-    "type-literal-delimiter": false
+    "type-literal-delimiter": false,
+    "no-unsafe-any": false,
+    "typedef": false
   }
 }

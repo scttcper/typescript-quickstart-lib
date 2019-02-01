@@ -87,7 +87,7 @@ function finalize() {
     delete pkg.devDependencies[dep];
   }
 
-  fs.writeFileSync(packageFile, JSON.stringify(pkg, null, 2));
+  fs.writeFileSync(packageFile, JSON.stringify(pkg, undefined, 2));
   rimraf.sync(path.join(dirname, 'setup.ts'));
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
