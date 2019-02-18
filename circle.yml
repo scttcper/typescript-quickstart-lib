@@ -17,6 +17,8 @@ jobs:
       - run:
           name: test
           command: npm run test:ci
+          environment:
+            JEST_JUNIT_OUTPUT: jest/test-report.xml
       - run:
           name: lint
           command: npm run lint
@@ -24,7 +26,7 @@ jobs:
           name: codecov
           command: bash <(curl -s https://codecov.io/bash)
       - store_test_results:
-          path: junit.xml
+          path: jest
   release:
     docker:
       - image: circleci/node:10
