@@ -4,7 +4,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['xo-space/esnext', 'xo-typescript', 'prettier', 'prettier/@typescript-eslint'],
+  extends: ['xo-space/esnext', 'xo-typescript', 'prettier/@typescript-eslint'],
   rules: {
     'object-curly-spacing': ['error', 'always'],
     '@typescript-eslint/indent': [

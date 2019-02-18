@@ -5,12 +5,8 @@
 export class DummyClass {
   value = true;
 
-  hello() {
-    return 'hello';
-  }
-
-  async test() {
-    const something = await Promise.resolve({ text: 'file text' });
+  async load() {
+    const something = await Promise.resolve({ text: 'text' });
     return something.text;
   }
 }
