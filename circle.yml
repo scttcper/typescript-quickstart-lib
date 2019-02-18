@@ -30,7 +30,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       # TODO: remove --ignore-scripts
       - run: npm install --ignore-scripts
-      - run: npm build
+      - run: npm run build
       - run: npm run semantic-release
 
 workflows:

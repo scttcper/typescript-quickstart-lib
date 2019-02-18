@@ -4,19 +4,16 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: [
-    'xo-space/esnext',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'prettier/@typescript-eslint',
-  ],
-  plugins: ['@typescript-eslint'],
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-  },
+  extends: ['xo-space/esnext', 'xo-typescript', 'prettier', 'prettier/@typescript-eslint'],
   rules: {
-    '@typescript-eslint/indent': ['error', 2],
-    '@typescript-eslint/explicit-member-accessibility': 0,
+    'object-curly-spacing': ['error', 'always'],
+    '@typescript-eslint/indent': [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+      },
+    ],
     '@typescript-eslint/explicit-function-return-type': 0,
   },
 };
