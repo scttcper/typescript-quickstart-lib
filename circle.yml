@@ -17,6 +17,8 @@ jobs:
       - run:
           name: test
           command: npm run test:ci
+          environment:
+            JEST_JUNIT_OUTPUT: "junit.xml"
       - run:
           name: lint
           command: npm run lint
