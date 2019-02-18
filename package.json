@@ -17,7 +17,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --coverage --no-cache",
-    "semantic-release": "cd dist && semantic-release",
+    "semantic-release": "cd pkg && semantic-release",
     "postinstall": "ts-node -O '{\"module\": \"commonjs\"}' setup.ts && npm install --ignore-scripts"
   },
   "dependencies": {},
