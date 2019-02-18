@@ -33,4 +33,4 @@ jspm_packages
 build
 docs
 dist
-.rpt2_cache
+pkg

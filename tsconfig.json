@@ -3,13 +3,15 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "lib": ["es2017"],
-    "target": "es2017",
-    "module": "es2015",
+    "target": "es2018",
+    "module": "esnext",
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": false,
     "noUnusedLocals": true,
     "sourceMap": true,
     "outDir": "dist"
-  }
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules"]
 }
