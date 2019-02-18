@@ -18,9 +18,9 @@ npm install
 - Jest test running
 - publishes for every platform http://2ality.com/2017/04/setting-up-multi-platform-packages.html
 - typescript type publishing `d.ts`
-- **[Prettier](https://github.com/prettier/prettier)** and **[TSLint](https://palantir.github.io/tslint/)** for code formatting and consistency
+- **[Prettier](https://github.com/prettier/prettier)** and eslint for code formatting and consistency
 - Docs generation using **[TypeDoc](http://typedoc.org/)**
-- **[Travis](https://travis-ci.org)** integration and **[codecov](https://codecov.io)** coverage reporting
+- **[circleCI](https://circleci.com)** integration and **[codecov](https://codecov.io)** coverage reporting
 - **Automatic releases and changelog**, using [Semantic release](https://github.com/semantic-release/semantic-release)
 
 ## Additional Setup
