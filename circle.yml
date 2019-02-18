@@ -9,7 +9,6 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: npm-install
-          # TODO: remove --ignore-scripts
           command: npm install --ignore-scripts
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
@@ -28,7 +27,6 @@ jobs:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
-      # TODO: remove --ignore-scripts
       - run: npm install --ignore-scripts
       - run: npm run build
       - run: npm run semantic-release

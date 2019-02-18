@@ -6,7 +6,7 @@ import { exec } from 'shelljs';
 import * as fs from 'fs';
 import * as replace from 'replace-in-file';
 
-const modifyFiles = ['LICENSE', 'package.json', 'build.ts'];
+const modifyFiles = ['LICENSE', 'package.json', 'build.ts', 'circle.yml'];
 const setupPkg = [
   '@types/inquirer',
   '@types/lodash',
@@ -58,8 +58,9 @@ function modifyContents(libraryName: string, username: string, email: string) {
         /--username--/g,
         /--email--/g,
         /--master--/g,
+        / --ignore-scripts/g,
       ],
-      to: [libraryName, username, email, 'master'],
+      to: [libraryName, username, email, 'master', ''],
     });
   } catch (error) {
     console.error('An error occurred modifying the file: ', error);
@@ -83,7 +84,6 @@ function finalize() {
 
   delete pkg.scripts.postinstall;
   for (const dep of setupPkg) {
-    // tslint:disable-next-line:no-dynamic-delete
     delete pkg.devDependencies[dep];
   }
 

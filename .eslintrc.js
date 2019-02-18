@@ -15,5 +15,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/explicit-function-return-type': 0,
+    'capitalized-comments': 0
   },
 };
