@@ -21,7 +21,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci --runInBand --reporters=default --reporters=jest-junit --coverage",
-    "semantic-release": "cd pkg && semantic-release",
+    "semantic-release": "cd dist && semantic-release",
     "postinstall": "ts-node setup.ts && npm install --ignore-scripts"
   },
   "dependencies": {},
