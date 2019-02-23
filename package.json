@@ -7,7 +7,7 @@
   "repository": "",
   "main": "./index.js",
   "typings": "./index.d.ts",
-  "module": "./module/index.d.ts",
+  "module": "./module/index.ts",
   "sideEffects": false,
   "keywords": [
     "typescript"
