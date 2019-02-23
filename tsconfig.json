@@ -2,16 +2,17 @@
   "compileOnSave": false,
   "compilerOptions": {
     "moduleResolution": "node",
-    "lib": ["es2017"],
-    "target": "es2018",
-    "module": "esnext",
+    "lib": ["es2018"],
+    "target": "es2017",
+    "module": "commonjs",
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": false,
+    "declaration": true,
+    "declarationMap": true,
     "noUnusedLocals": true,
     "sourceMap": true,
     "outDir": "dist"
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src/index.ts"]
 }

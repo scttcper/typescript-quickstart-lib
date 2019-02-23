@@ -16,6 +16,7 @@ const setupPkg = [
   'inquirer',
   'lodash',
   'replace-in-file',
+  'ts-node',
 ];
 
 const dir = process.cwd();
