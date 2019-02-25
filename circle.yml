@@ -30,10 +30,6 @@ jobs:
   release:
     docker:
       - image: circleci/node:10
-    build:
-      branches:
-        only:
-          - master
     steps:
       - checkout
       - restore_cache:
@@ -49,5 +45,8 @@ workflows:
     jobs:
       - test
       - release:
+          branches:
+            only:
+              - master
           requires:
             - test
