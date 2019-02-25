@@ -30,9 +30,10 @@ jobs:
   release:
     docker:
       - image: circleci/node:10
-    branches:
-      only:
-        - master
+    build:
+      branches:
+        only:
+          - master
     steps:
       - checkout
       - restore_cache:
