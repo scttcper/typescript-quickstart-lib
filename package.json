@@ -29,7 +29,7 @@
     "@types/inquirer": "6.0.0",
     "@types/jest": "24.0.11",
     "@types/lodash": "4.14.123",
-    "@types/node": "11.11.6",
+    "@types/node": "11.12.2",
     "@types/rimraf": "2.0.2",
     "@types/shelljs": "0.8.3",
     "@typescript-eslint/eslint-plugin": "1.5.0",
