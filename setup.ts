@@ -1,7 +1,7 @@
 import { prompt, Question } from 'inquirer';
 import * as path from 'path';
 import * as _ from 'lodash';
-import * as rimraf from 'rimraf';
+import del from 'del';
 import { exec } from 'shelljs';
 import * as fs from 'fs';
 import * as replace from 'replace-in-file';
@@ -10,8 +10,8 @@ const modifyFiles = ['LICENSE', 'package.json', 'build.ts', 'circle.yml'];
 const setupPkg = [
   '@types/inquirer',
   '@types/lodash',
-  '@types/rimraf',
   '@types/shelljs',
+  'del',
   'shelljs',
   'inquirer',
   'lodash',
@@ -74,7 +74,7 @@ function modifyContents(libraryName: string, username: string, email: string) {
 function finalize() {
   // Recreate Git folder
   console.log('Removing .git folder');
-  rimraf.sync('.git');
+  del.sync('.git');
   const gitInitOutput = exec(`git init "${dirname}"`, {
     silent: true,
   }).stdout;
@@ -89,7 +89,7 @@ function finalize() {
   }
 
   fs.writeFileSync(packageFile, JSON.stringify(pkg, undefined, 2));
-  rimraf.sync(path.join(dirname, 'setup.ts'));
+  del.sync(path.join(dirname, 'setup.ts'));
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
