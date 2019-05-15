@@ -5,9 +5,12 @@
   "author": "--username-- <--email-->",
   "license": "MIT",
   "repository": "",
-  "main": "./dist",
+  "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "module": "./dist/module/index.js",
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "keywords": [
     "typescript"
@@ -23,30 +26,27 @@
     "semantic-release": "semantic-release",
     "postinstall": "ts-node setup.ts && npm install --ignore-scripts"
   },
-  "files": [
-    "dist"
-  ],
   "dependencies": {},
   "devDependencies": {
-    "@types/inquirer": "6.0.1",
-    "@types/jest": "24.0.12",
-    "@types/lodash": "4.14.126",
-    "@types/node": "12.0.0",
+    "@types/inquirer": "6.0.2",
+    "@types/jest": "24.0.13",
+    "@types/lodash": "4.14.129",
+    "@types/node": "12.0.2",
     "@types/shelljs": "0.8.5",
-    "@typescript-eslint/eslint-plugin": "1.8.0",
-    "@typescript-eslint/parser": "1.8.0",
+    "@typescript-eslint/eslint-plugin": "1.9.0",
+    "@typescript-eslint/parser": "1.9.0",
     "del": "4.1.1",
     "del-cli": "1.1.0",
     "eslint": "5.16.0",
     "eslint-config-prettier": "4.2.0",
     "eslint-config-xo-space": "0.21.0",
-    "eslint-config-xo-typescript": "0.11.0",
+    "eslint-config-xo-typescript": "0.12.0",
     "eslint-plugin-import": "2.17.2",
     "inquirer": "6.3.1",
     "jest": "24.8.0",
     "jest-junit": "6.4.0",
     "lodash": "4.17.11",
-    "replace-in-file": "4.0.0",
+    "replace-in-file": "4.1.0",
     "semantic-release": "15.13.12",
     "shelljs": "0.8.3",
     "ts-jest": "24.0.2",
