@@ -46,7 +46,7 @@
     "jest-junit": "7.0.0",
     "lodash": "4.17.15",
     "replace-in-file": "4.1.1",
-    "semantic-release": "15.13.18",
+    "semantic-release": "15.13.19",
     "shelljs": "0.8.3",
     "ts-jest": "24.0.2",
     "ts-node": "8.3.0",
