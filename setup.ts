@@ -1,6 +1,6 @@
 import del from 'del';
 import fs from 'fs';
-import { prompt, Question } from 'inquirer';
+import { prompt } from 'inquirer';
 import _ from 'lodash';
 import path from 'path';
 import replace from 'replace-in-file';
@@ -36,13 +36,12 @@ async function setup() {
 }
 
 async function confirmName() {
-  const confirm: Question = {
+  const res = await prompt({
     type: 'input',
     name: 'name',
     message: 'library name',
     default: _.kebabCase(basename),
-  };
-  const res = await prompt(confirm);
+  });
   return res.name;
 }
 
