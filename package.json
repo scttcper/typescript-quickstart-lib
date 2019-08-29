@@ -52,6 +52,10 @@
     "ts-node": "8.3.0",
     "typescript": "3.6.2"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
   "release": {
     "branch": "--master--"
   },
