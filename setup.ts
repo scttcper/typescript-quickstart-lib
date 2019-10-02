@@ -92,13 +92,13 @@ function finalize() {
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
-if (process.env.TRAVIS) {
-  process.exit(0);
-} else {
+if (process.env.TRAVIS === undefined) {
   setup()
     .then(() => process.exit(0))
     .catch(err => {
       console.error(err);
       process.exit(1);
     });
+} else {
+  process.exit(0);
 }
