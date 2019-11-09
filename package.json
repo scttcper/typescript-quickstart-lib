@@ -29,17 +29,17 @@
   "dependencies": {},
   "devDependencies": {
     "@types/inquirer": "6.5.0",
-    "@types/jest": "24.0.21",
-    "@types/lodash": "4.14.144",
-    "@types/node": "12.12.5",
+    "@types/jest": "24.0.22",
+    "@types/lodash": "4.14.146",
+    "@types/node": "12.12.7",
     "@types/shelljs": "0.8.6",
-    "@typescript-eslint/eslint-plugin": "2.6.0",
-    "@typescript-eslint/parser": "2.6.0",
+    "@typescript-eslint/eslint-plugin": "2.6.1",
+    "@typescript-eslint/parser": "2.6.1",
     "del": "5.1.0",
     "del-cli": "3.0.0",
     "eslint": "6.6.0",
     "eslint-config-xo-space": "0.21.0",
-    "eslint-config-xo-typescript": "0.19.0",
+    "eslint-config-xo-typescript": "0.21.0",
     "eslint-plugin-import": "2.18.2",
     "inquirer": "7.0.0",
     "jest": "24.9.0",
@@ -50,7 +50,7 @@
     "shelljs": "0.8.3",
     "ts-jest": "24.1.0",
     "ts-node": "8.4.1",
-    "typescript": "3.6.4"
+    "typescript": "3.7.2"
   },
   "jest": {
     "preset": "ts-jest",
