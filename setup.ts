@@ -84,6 +84,7 @@ function finalize() {
 
   delete pkg.scripts.postinstall;
   for (const dep of setupPkg) {
+    // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
     delete pkg.devDependencies[dep];
   }
 

@@ -13,5 +13,6 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/strict-boolean-expressions': 0,
+    '@typescript-eslint/no-untyped-public-signature': 0,
   },
 };
