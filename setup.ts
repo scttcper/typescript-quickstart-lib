@@ -24,7 +24,7 @@ const packageFile = path.resolve(dir, 'package.json');
 const dirname = path.dirname(packageFile);
 const basename = path.basename(dirname);
 
-async function setup() {
+async function setup(): Promise<void> {
   const name = await confirmName();
   console.log('Thanks, setting up!');
 
@@ -35,7 +35,7 @@ async function setup() {
   finalize();
 }
 
-async function confirmName() {
+async function confirmName(): Promise<string> {
   const res = await prompt({
     type: 'input',
     name: 'name',
@@ -48,7 +48,7 @@ async function confirmName() {
 /**
  * Updates the contents of the template files with the library name or user details
  */
-function modifyContents(libraryName: string, username: string, email: string) {
+function modifyContents(libraryName: string, username: string, email: string): void {
   const files = modifyFiles.map(f => path.join(dirname, f));
   try {
     replace.sync({
@@ -70,7 +70,7 @@ function modifyContents(libraryName: string, username: string, email: string) {
 /**
  * Calls any external programs to finish setting up the library
  */
-function finalize() {
+function finalize(): void {
   // Recreate Git folder
   console.log('Removing .git folder');
   del.sync('.git');
