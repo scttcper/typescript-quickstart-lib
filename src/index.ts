@@ -5,7 +5,7 @@
 export class DummyClass {
   value = true;
 
-  async load() {
+  async load(): Promise<string> {
     const something = await Promise.resolve({ text: 'text' });
     return something.text;
   }
