@@ -48,7 +48,7 @@
     "replace-in-file": "5.0.2",
     "semantic-release": "16.0.3",
     "shelljs": "0.8.3",
-    "ts-jest": "25.0.0",
+    "ts-jest": "25.1.0",
     "ts-node": "8.6.2",
     "typescript": "3.7.5"
   },
