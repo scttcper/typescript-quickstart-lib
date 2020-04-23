@@ -7,10 +7,15 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "strict": true,
+    "newLine": "lf",
     "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmitOnError": true,
     "noUnusedLocals": true,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "skipLibCheck": true
   }
 }
