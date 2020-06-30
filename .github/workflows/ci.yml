@@ -10,10 +10,9 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 12
-      - run: npm install
+      - run: npm ci
       - run: npm run lint
       - run: npm run test:ci
-      - run: npm run build
 
   coverage:
     needs: build
@@ -31,8 +30,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: 12
-      - run: npm install
-      - run: npm run build
+      - run: npm ci
       - run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
