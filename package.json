@@ -28,7 +28,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@ctrl/eslint-config": "1.0.0",
+    "@ctrl/eslint-config": "1.0.2",
     "@jest/globals": "26.1.0",
     "@types/inquirer": "6.5.0",
     "@types/lodash": "4.14.157",
