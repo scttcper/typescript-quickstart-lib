@@ -62,7 +62,7 @@ function modifyContents(libraryName: string, username: string, email: string): v
       ],
       to: [libraryName, username, email, 'master', ''],
     });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('An error occurred modifying the file: ', error);
   }
 }
