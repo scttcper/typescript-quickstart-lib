@@ -53,14 +53,8 @@ function modifyContents(libraryName: string, username: string, email: string): v
   try {
     replace.sync({
       files,
-      from: [
-        /--libraryname--/g,
-        /--username--/g,
-        /--email--/g,
-        /--master--/g,
-        / --ignore-scripts/g,
-      ],
-      to: [libraryName, username, email, 'master', ''],
+      from: [/--libraryname--/g, /--username--/g, /--email--/g, /--main--/g, / --ignore-scripts/g],
+      to: [libraryName, username, email, 'main', ''],
     });
   } catch (error: unknown) {
     console.error('An error occurred modifying the file: ', error);
