@@ -1,4 +1,4 @@
-import { describe, beforeEach, it, expect } from '@jest/globals';
+import { beforeEach, describe, expect, it } from '@jest/globals';
 
 import { DummyClass } from '../src/index';
 

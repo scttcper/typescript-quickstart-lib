@@ -1,8 +1,9 @@
-import del from 'del';
-import fs from 'fs';
+import * as fs from 'fs';
+import * as path from 'path';
+
+import * as del from 'del';
 import { prompt } from 'inquirer';
-import _ from 'lodash';
-import path from 'path';
+import * as _ from 'lodash';
 import replace from 'replace-in-file';
 import { exec } from 'shelljs';
 

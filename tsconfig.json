@@ -1,11 +1,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "moduleResolution": "node",
-    "lib": ["es2018"],
-    "target": "es2018",
-    "module": "commonjs",
-    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "lib": ["ES2020"],
+    "target": "ES2020",
+    "module": "ESNext",
     "strict": true,
     "newLine": "lf",
     "noImplicitAny": false,
