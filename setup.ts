@@ -2,20 +2,20 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import * as del from 'del';
-import { prompt } from 'inquirer';
-import * as _ from 'lodash';
+import inquirer from 'inquirer';
+import { kebabCase } from 'lodash-es';
 import replace from 'replace-in-file';
-import { exec } from 'shelljs';
+import shelljs from 'shelljs';
 
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts', 'circle.yml'];
 const setupPkg = [
   '@types/inquirer',
-  '@types/lodash',
+  '@types/lodash-es',
   '@types/shelljs',
   'del',
   'shelljs',
   'inquirer',
-  'lodash',
+  'lodash-es',
   'replace-in-file',
   'ts-node',
 ];
@@ -30,18 +30,18 @@ async function setup(): Promise<void> {
   console.log('Thanks, setting up!');
 
   // Get the Git username and email before the .git directory is removed
-  const username = exec('git config user.name').stdout.trim();
-  const email = exec('git config user.email').stdout.trim();
+  const username = shelljs.exec('git config user.name').stdout.trim();
+  const email = shelljs.exec('git config user.email').stdout.trim();
   modifyContents(name, username, email);
   finalize();
 }
 
 async function confirmName(): Promise<string> {
-  const res = await prompt({
+  const res = await inquirer.prompt({
     type: 'input',
     name: 'name',
     message: 'library name',
-    default: _.kebabCase(basename),
+    default: kebabCase(basename),
   });
   return res.name;
 }
@@ -69,7 +69,7 @@ function finalize(): void {
   // Recreate Git folder
   console.log('Removing .git folder');
   del.sync('.git');
-  const gitInitOutput = exec(`git init "${dirname}"`, {
+  const gitInitOutput = shelljs.exec(`git init "${dirname}"`, {
     silent: true,
   }).stdout;
   console.log(gitInitOutput);
