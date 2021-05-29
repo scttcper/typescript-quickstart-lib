@@ -75,6 +75,7 @@ function finalize(): void {
   console.log(gitInitOutput);
 
   // Remove post-install command
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const pkg = JSON.parse(fs.readFileSync(packageFile) as any);
 
   delete pkg.scripts.postinstall;
@@ -88,7 +89,7 @@ function finalize(): void {
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
-if (process.env.TRAVIS === undefined) {
+if (process.env['TRAVIS'] === undefined) {
   setup()
     .then(() => process.exit(0))
     .catch(err => {
