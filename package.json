@@ -24,7 +24,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci --reporters=default --reporters=jest-junit --coverage",
-    "postinstall": "ts-node setup.ts && npm install --ignore-scripts"
+    "postinstall": "node --loader ts-node/esm ./setup.ts && npm install --ignore-scripts"
   },
   "devDependencies": {
     "@ctrl/eslint-config": "2.0.7",
