@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       - node/install-packages
-      - run: cd dist && npx semantic-release
+      - run: npx semantic-release
 
 workflows:
   version: 2

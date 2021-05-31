@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import * as del from 'del';
-import inquirer from 'inquirer';
-import { kebabCase } from 'lodash-es';
+import * as inquirer from 'inquirer';
+import { kebabCase } from 'lodash';
 import replace from 'replace-in-file';
 import shelljs from 'shelljs';
 
