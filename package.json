@@ -26,16 +26,18 @@
     "postinstall": "node --loader ts-node/esm ./setup.ts && npm install --ignore-scripts"
   },
   "devDependencies": {
-    "@ctrl/eslint-config": "2.0.7",
+    "@babel/plugin-transform-modules-commonjs": "7.14.0",
+    "@babel/preset-typescript": "7.13.0",
+    "@ctrl/eslint-config": "2.0.8",
     "@jest/globals": "27.0.3",
     "@sindresorhus/tsconfig": "1.0.2",
     "@types/inquirer": "7.3.1",
     "@types/lodash": "4.14.170",
-    "@types/node": "15.6.1",
+    "@types/node": "15.12.1",
     "@types/shelljs": "0.8.8",
     "del": "6.0.0",
     "inquirer": "8.1.0",
-    "jest": "27.0.3",
+    "jest": "27.0.4",
     "jest-junit": "12.1.0",
     "lodash": "4.17.21",
     "replace-in-file": "6.2.0",
@@ -46,6 +48,14 @@
   "jest": {
     "testEnvironment": "node",
     "coverageProvider": "v8"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-typescript"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-modules-commonjs"
+    ]
   },
   "publishConfig": {
     "access": "public"
