@@ -23,8 +23,9 @@ jobs:
           command: npm run lint
       - codecov/upload
   release:
-    docker:
-      - image: cimg/node:current
+    executor:
+      name: node/default
+      tag: 'current'
     steps:
       - checkout
       - node/install-packages
