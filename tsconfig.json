@@ -2,7 +2,6 @@
   "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
     "outDir": "dist",
-    "lib": ["ES2020"],
-    "module": "commonjs"
+    "lib": ["ES2020"]
   }
 }

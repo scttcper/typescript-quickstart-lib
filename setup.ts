@@ -1,21 +1,21 @@
-import * as fs from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import * as path from 'path';
 
-import * as del from 'del';
+import { sync as delSync } from 'del';
 import * as inquirer from 'inquirer';
 import { kebabCase } from 'lodash';
 import replace from 'replace-in-file';
-import shelljs from 'shelljs';
+import * as shelljs from 'shelljs';
 
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts', 'circle.yml'];
 const setupPkg = [
   '@types/inquirer',
-  '@types/lodash-es',
+  '@types/lodash',
   '@types/shelljs',
   'del',
   'shelljs',
   'inquirer',
-  'lodash-es',
+  'lodash',
   'replace-in-file',
   'ts-node',
 ];
@@ -68,15 +68,14 @@ function modifyContents(libraryName: string, username: string, email: string): v
 function finalize(): void {
   // Recreate Git folder
   console.log('Removing .git folder');
-  del.sync('.git');
+  delSync('.git');
   const gitInitOutput = shelljs.exec(`git init "${dirname}"`, {
     silent: true,
   }).stdout;
   console.log(gitInitOutput);
 
   // Remove post-install command
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const pkg = JSON.parse(fs.readFileSync(packageFile) as any);
+  const pkg = JSON.parse(readFileSync(packageFile) as any);
 
   delete pkg.scripts.postinstall;
   for (const dep of setupPkg) {
@@ -84,8 +83,8 @@ function finalize(): void {
     delete pkg.devDependencies[dep];
   }
 
-  fs.writeFileSync(packageFile, JSON.stringify(pkg, undefined, 2));
-  del.sync(path.join(dirname, 'setup.ts'));
+  writeFileSync(packageFile, JSON.stringify(pkg, undefined, 2));
+  delSync(path.join(dirname, 'setup.ts'));
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 

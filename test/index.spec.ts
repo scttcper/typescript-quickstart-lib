@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from '@jest/globals';
 
-import { DummyClass } from '../src/index';
+import { DummyClass } from '..';
 
 describe('Dummy test', () => {
   let dummy: DummyClass;
