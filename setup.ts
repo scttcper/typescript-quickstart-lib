@@ -2,20 +2,20 @@ import { readFileSync, writeFileSync } from 'fs';
 import * as path from 'path';
 
 import { sync as delSync } from 'del';
-import * as inquirer from 'inquirer';
+import inquirer from 'inquirer';
 import { kebabCase } from 'lodash';
 import replace from 'replace-in-file';
-import * as shelljs from 'shelljs';
+import shelljs from 'shelljs';
 
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts', 'circle.yml'];
 const setupPkg = [
   '@types/inquirer',
-  '@types/lodash',
+  '@types/lodash-es',
   '@types/shelljs',
   'del',
   'shelljs',
   'inquirer',
-  'lodash',
+  'lodash-es',
   'replace-in-file',
   'ts-node',
 ];

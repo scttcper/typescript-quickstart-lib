@@ -6,11 +6,9 @@
   "license": "MIT",
   "repository": "",
   "type": "module",
-  "exports": "./index.js",
-  "typings": "./index.d.ts",
+  "exports": "./dist/src/index.js",
   "files": [
-    "index.js",
-    "index.d.ts"
+    "dist/src"
   ],
   "sideEffects": false,
   "keywords": [
@@ -31,14 +29,14 @@
     "@jest/globals": "27.0.6",
     "@sindresorhus/tsconfig": "1.0.2",
     "@types/inquirer": "7.3.3",
-    "@types/lodash": "4.14.171",
+    "@types/lodash-es": "4.17.4",
     "@types/node": "16.4.0",
     "@types/shelljs": "0.8.9",
     "del": "6.0.0",
     "inquirer": "8.1.2",
     "jest": "27.0.6",
     "jest-junit": "12.2.0",
-    "lodash": "4.17.21",
+    "lodash-es": "4.17.21",
     "replace-in-file": "6.2.0",
     "shelljs": "0.8.4",
     "ts-jest": "27.0.4",
