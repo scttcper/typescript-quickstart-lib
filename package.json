@@ -45,8 +45,12 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "collectCoverageFrom": ["src/**/**.ts"],
-    "testMatch": ["**/test/**/**.spec.ts"],
+    "collectCoverageFrom": [
+      "src/**/**.ts"
+    ],
+    "testMatch": [
+      "**/test/**/**.spec.ts"
+    ],
     "coverageProvider": "v8",
     "preset": "ts-jest/presets/default-esm",
     "globals": {
