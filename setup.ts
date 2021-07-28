@@ -1,9 +1,9 @@
-import { readFileSync, writeFileSync } from 'fs';
-import * as path from 'path';
+import { readFileSync, writeFileSync } from 'node:fs';
+import * as path from 'node:path';
 
 import { sync as delSync } from 'del';
 import inquirer from 'inquirer';
-import { kebabCase } from 'lodash';
+import { kebabCase } from 'lodash-es';
 import replace from 'replace-in-file';
 import shelljs from 'shelljs';
 

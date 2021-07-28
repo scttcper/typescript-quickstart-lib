@@ -26,12 +26,12 @@
     "postinstall": "node --loader ts-node/esm ./setup.ts && npm install --ignore-scripts"
   },
   "devDependencies": {
-    "@ctrl/eslint-config": "2.0.9",
+    "@ctrl/eslint-config": "2.0.10",
     "@jest/globals": "27.0.6",
     "@sindresorhus/tsconfig": "1.0.2",
     "@types/inquirer": "7.3.3",
     "@types/lodash-es": "4.17.4",
-    "@types/node": "16.4.0",
+    "@types/node": "16.4.5",
     "@types/shelljs": "0.8.9",
     "del": "6.0.0",
     "inquirer": "8.1.2",

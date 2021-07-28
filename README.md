@@ -16,26 +16,13 @@ npm install
 
 - Zero Setup
 - Jest test running
-- publishes for every platform http://2ality.com/2017/04/setting-up-multi-platform-packages.html
+- publishes in esm
 - typescript type publishing `d.ts`
 - **[Prettier](https://github.com/prettier/prettier)** and eslint for code formatting and consistency
 - **[circleCI](https://circleci.com)** integration and **[codecov](https://codecov.io)** coverage reporting
 - **Automatic releases and changelog**, using [Semantic release](https://github.com/semantic-release/semantic-release)
 
-## Additional Setup
-
-#### Travis
-
-Add travis Environment Variables
-
-- **NPM** add `NPM_TOKEN` for publishing (see more)[https://github.com/semantic-release/npm#environment-variables]
-- **docs** add `GH_TOKEN` to publish docs to github pages
-
-#### Codecov
-
-Add project to codecov https://codecov.io/gh
-
-### NPM scripts
+## NPM scripts
 
 - `npm test`: Run test suite
 - `npm run test:watch`: Run test suite in [interactive watch mode](http://facebook.github.io/jest/docs/cli.html#watch)
@@ -43,11 +30,4 @@ Add project to codecov https://codecov.io/gh
 - `npm run build`: Generate bundles and typings
 - `npm run build:docs`: builds docs
 - `npm run lint`: Lints code
-
-### Importing library
-
-You can import the public_api using
-
-```ts
-import { something } from 'mylib';
-```
+- `npm run lint:fix`: Lints code and applies auto fixes
