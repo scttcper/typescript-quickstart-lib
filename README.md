@@ -15,7 +15,7 @@ npm install
 ## Features
 
 - Zero Setup
-- Jest test running
+- Vitest test running
 - publishes in esm
 - typescript type publishing `d.ts`
 - **[Prettier](https://github.com/prettier/prettier)** and eslint for code formatting and consistency
