@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import * as path from 'node:path';
 
-import { sync as delSync } from 'del';
+import { deleteSync } from 'del';
 import inquirer from 'inquirer';
 import { kebabCase } from 'lodash-es';
 import replace from 'replace-in-file';
@@ -68,7 +68,7 @@ function modifyContents(libraryName: string, username: string, email: string): v
 function finalize(): void {
   // Recreate Git folder
   console.log('Removing .git folder');
-  delSync('.git');
+  deleteSync('.git');
   const gitInitOutput = shelljs.exec(`git init "${dirname}"`, {
     silent: true,
   }).stdout;
@@ -84,7 +84,7 @@ function finalize(): void {
   }
 
   writeFileSync(packageFile, JSON.stringify(pkg, undefined, 2));
-  delSync(path.join(dirname, 'setup.ts'));
+  deleteSync(path.join(dirname, 'setup.ts'));
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
