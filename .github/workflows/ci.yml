@@ -11,7 +11,8 @@ jobs:
       - name: setup node
         uses: actions/setup-node@master
         with:
-          node-version: 16
+          node-version: 18
+          cache: 'npm'
       - name: install dependencies
         run: npm ci
       - name: lint
@@ -36,7 +37,8 @@ jobs:
       - name: setup node
         uses: actions/setup-node@master
         with:
-          node-version: 16
+          node-version: 18
+          cache: 'npm'
       - name: install dependencies
         run: npm ci
       - name: release
