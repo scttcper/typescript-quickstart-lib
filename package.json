@@ -6,15 +6,15 @@
   "license": "MIT",
   "repository": "",
   "type": "module",
-  "exports": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "exports": {
+    "default": "./dist/src/index.js",
+    "types": "./dist/src/index.d.ts"
+  },
   "files": [
     "dist/src"
   ],
   "sideEffects": false,
-  "keywords": [
-    "typescript"
-  ],
+  "keywords": [],
   "scripts": {
     "lint": "pnpm run '/^(lint:biome|lint:eslint)$/'",
     "lint:biome": "biome check .",
@@ -57,6 +57,6 @@
     ]
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   }
 }
