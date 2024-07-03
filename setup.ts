@@ -4,7 +4,7 @@ import * as path from 'node:path';
 import { deleteSync } from 'del';
 import inquirer from 'inquirer';
 import { kebabCase } from 'lodash-es';
-import replace from 'replace-in-file';
+import { replaceInFileSync } from 'replace-in-file';
 import shelljs from 'shelljs';
 
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts', 'circle.yml'];
@@ -27,7 +27,7 @@ const basename = path.basename(dirname);
 
 async function setup(): Promise<void> {
   const name = await confirmName();
-  console.log('Thanks, setting up!');
+  console.log('Setting up!');
 
   // Get the Git username and email before the .git directory is removed
   const username = shelljs.exec('git config user.name').stdout.trim();
@@ -52,7 +52,7 @@ async function confirmName(): Promise<string> {
 function modifyContents(libraryName: string, username: string, email: string): void {
   const files = modifyFiles.map(f => path.join(dirname, f));
   try {
-    replace.sync({
+    replaceInFileSync({
       files,
       from: [/--libraryname--/g, /--username--/g, /--email--/g, /--main--/g, / --ignore-scripts/g],
       to: [libraryName, username, email, 'main', ''],

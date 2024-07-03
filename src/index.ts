@@ -10,7 +10,3 @@ export class DummyClass {
     return something.text;
   }
 }
-
-const x = [1, 2, 3, 4, 5];
-const y = x.map(n => n * 2);
-const is = x === y;

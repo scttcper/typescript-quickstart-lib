@@ -9,7 +9,7 @@ git clone https://github.com/TypeCtrl/typescript-quickstart-lib.git --depth=1 YO
 cd YOURFOLDERNAME
 
 # Run npm install and write your library name when asked. That's it!
-npm install
+pnpm install
 ```
 
 ## Features
