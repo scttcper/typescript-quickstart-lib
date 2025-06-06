@@ -27,7 +27,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ci": "vitest run --coverage --reporter=default --reporter=junit --outputFile=./junit.xml",
-    "postinstall": "node --loader ts-node/esm ./setup.js && pnpm install --ignore-scripts"
+    "postinstall": "node ./setup.ts && pnpm install --ignore-scripts"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
@@ -45,7 +45,6 @@
     "lodash-es": "4.17.21",
     "replace-in-file": "8.3.0",
     "shelljs": "0.10.0",
-    "ts-node": "10.9.2",
     "typescript": "5.8.3",
     "vitest": "3.2.2"
   },
