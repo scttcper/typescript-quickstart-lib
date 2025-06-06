@@ -6,8 +6,8 @@ import { deleteSync } from 'del';
 import inquirer from 'inquirer';
 import { replaceInFileSync } from 'replace-in-file';
 
-const modifyFiles = ['LICENSE', 'package.json', 'build.ts', 'circle.yml'];
-const setupPkg = ['@types/inquirer', 'del', 'inquirer', 'replace-in-file'];
+const modifyFiles = ['LICENSE', 'package.json'];
+const setupPkg = ['del', 'inquirer', 'replace-in-file'];
 
 function kebabCase(str: string): string {
   return str.replace(/([A-Z])/g, '-$1').toLowerCase();
