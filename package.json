@@ -30,23 +30,26 @@
     "postinstall": "node --loader ts-node/esm ./setup.js && pnpm install --ignore-scripts"
   },
   "devDependencies": {
-    "@ctrl/eslint-config-biome": "4.2.12",
-    "@sindresorhus/tsconfig": "6.0.0",
-    "@types/inquirer": "9.0.7",
-    "@types/lodash-es": "4.17.12",
-    "@types/node": "22.9.0",
-    "@types/shelljs": "0.8.15",
-    "@vitest/coverage-v8": "2.1.5",
     "@biomejs/biome": "1.9.4",
+    "@ctrl/eslint-config-biome": "4.4.2",
+    "@eslint/compat": "1.2.9",
+    "@sindresorhus/tsconfig": "7.0.0",
+    "@types/inquirer": "9.0.8",
+    "@types/lodash-es": "4.17.12",
+    "@types/node": "22.15.30",
+    "@types/shelljs": "0.8.16",
+    "@vitest/coverage-v8": "3.2.2",
     "del": "8.0.0",
-    "inquirer": "12.1.0",
+    "eslint": "9.28.0",
+    "inquirer": "12.6.3",
     "lodash-es": "4.17.21",
-    "replace-in-file": "8.2.0",
-    "shelljs": "0.8.5",
+    "replace-in-file": "8.3.0",
+    "shelljs": "0.10.0",
     "ts-node": "10.9.2",
-    "typescript": "5.6.3",
-    "vitest": "2.1.5"
+    "typescript": "5.8.3",
+    "vitest": "3.2.2"
   },
+  "packageManager": "pnpm@10.11.0",
   "publishConfig": {
     "access": "public",
     "provenance": true

@@ -1,30 +1,13 @@
 # Logs
-logs
-*.log
 npm-debug.log*
-
-# Runtime data
-pids
-*.pid
-*.seed
 
 # Coverage directory
 coverage
 junit.xml
 reports
 
-# node-waf configuration
-.lock-wscript
-
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
 # Dependency directories
 node_modules
-jspm_packages
-
-# Optional npm cache directory
-.npm
 
 # Optional REPL history
 .node_repl_history
@@ -33,10 +16,13 @@ jspm_packages
 !.vscode/settings.json
 .idea
 
-# build
+# Build
 build
-docs
 dist
 yarn.lock
+package-lock.json
 **.js
 **.d.ts
+
+# Stuff
+.DS_Store
