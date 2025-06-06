@@ -1,24 +1,17 @@
+import { execSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import * as path from 'node:path';
 
 import { deleteSync } from 'del';
 import inquirer from 'inquirer';
-import { kebabCase } from 'lodash-es';
 import { replaceInFileSync } from 'replace-in-file';
-import shelljs from 'shelljs';
 
 const modifyFiles = ['LICENSE', 'package.json', 'build.ts', 'circle.yml'];
-const setupPkg = [
-  '@types/inquirer',
-  '@types/lodash-es',
-  '@types/shelljs',
-  'del',
-  'shelljs',
-  'inquirer',
-  'lodash-es',
-  'replace-in-file',
-  'ts-node',
-];
+const setupPkg = ['@types/inquirer', 'del', 'inquirer', 'replace-in-file'];
+
+function kebabCase(str: string): string {
+  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
+}
 
 const dir = process.cwd();
 const packageFile = path.resolve(dir, 'package.json');
@@ -30,8 +23,8 @@ async function setup(): Promise<void> {
   console.log('Setting up!');
 
   // Get the Git username and email before the .git directory is removed
-  const username = shelljs.exec('git config user.name').stdout.trim();
-  const email = shelljs.exec('git config user.email').stdout.trim();
+  const username = execSync('git config user.name', { encoding: 'utf8' }).trim();
+  const email = execSync('git config user.email', { encoding: 'utf8' }).trim();
   modifyContents(name, username, email);
   finalize();
 }
@@ -69,9 +62,7 @@ function finalize(): void {
   // Recreate Git folder
   console.log('Removing .git folder');
   deleteSync('.git');
-  const gitInitOutput = shelljs.exec(`git init "${dirname}"`, {
-    silent: true,
-  }).stdout;
+  const gitInitOutput = execSync(`git init "${dirname}"`, { encoding: 'utf8' });
   console.log(gitInitOutput);
 
   // Remove post-install command
@@ -88,13 +79,9 @@ function finalize(): void {
   console.log('Last step - Reinstalling packages without setup dependencies');
 }
 
-if (process.env['TRAVIS'] === undefined) {
-  setup()
-    .then(() => process.exit(0))
-    .catch(err => {
-      console.error(err);
-      process.exit(1);
-    });
-} else {
-  process.exit(0);
-}
+setup()
+  .then(() => process.exit(0))
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
