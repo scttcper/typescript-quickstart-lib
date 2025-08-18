@@ -18,8 +18,8 @@ pnpm install
 - Vitest test running
 - publishes in esm
 - typescript type publishing `d.ts`
-- **[Prettier](https://github.com/prettier/prettier)** and eslint for code formatting and consistency
-- **[circleCI](https://circleci.com)** integration and **[codecov](https://codecov.io)** coverage reporting
+- **[Prettier](https://github.com/prettier/prettier)** and oxlint
+- **[GitHub Actions](https://github.com/features/actions)** integration and **[codecov](https://codecov.io)** coverage reporting
 - **Automatic releases and changelog**, using [Semantic release](https://github.com/semantic-release/semantic-release)
 
 ## NPM scripts
